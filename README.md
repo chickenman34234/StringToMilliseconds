@@ -41,3 +41,4 @@ ms(8280000)      # Returns "2.3 Hours"
 
 ms(8280000, decimal=False)  # 2 Hours
 ```
+[github]()
