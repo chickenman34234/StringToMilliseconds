@@ -5,7 +5,7 @@ MS_TO_MINUTE = 1000 * 60
 MS_TO_HOUR = 1000 * 60 * 60
 MS_TO_DAY = 1000 * 60 * 60 * 24
 MS_TO_WEEK = 1000 * 60 * 60 * 24 * 7
-MS_TO_YEAR = 1000 * 60 * 60 * 24 * 7 * 52.1429
+MS_TO_YEAR = 1000 * 60 * 60 * 24 * 7 * 52.143
 
 
 def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
@@ -51,7 +51,6 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
                 raise Exception("No Valid Time Unit")
     elif isinstance(time, int) or isinstance(time, float):
         abs_time = abs(time)
-        print(abs_time , f"{abs_time > abs(MS_TO_YEAR)} {abs_time > MS_TO_WEEK} {abs_time > MS_TO_DAY} {abs_time > MS_TO_MINUTE} {abs_time > MS_TO_SECONDS}")
         round_dp = 2 if decimal else 0
 
         if abs_time > MS_TO_YEAR:
@@ -66,11 +65,8 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
             return f"{round(time / MS_TO_MINUTE, round_dp)} Minute{'' if (1.0 >= round(time / MS_TO_MINUTE, round_dp) >= -1.0) else 's'}"
         elif abs_time > MS_TO_SECONDS:
             return f"{round(time / MS_TO_SECONDS, round_dp)} Second{'' if (1.0 >= round(time / MS_TO_SECONDS, round_dp) >= -1.0) else 's'}"
-
-        raise Exception("Number Format Failed")
+        else:
+            return f"{round(time, round_dp)} Millisecond{'' if (1.0 >= round(time, round_dp) >= -1.0) else 's'}"
     else:
         raise Exception("No Valid Time Unit Or Number Found")
-
-
-
 
