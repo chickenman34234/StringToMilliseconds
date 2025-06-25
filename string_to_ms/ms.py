@@ -51,7 +51,7 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
                 raise Exception("No Valid Time Unit")
     elif isinstance(time, int) or isinstance(time, float):
         abs_time = abs(time)
-        round_dp = 2 if decimal else 0
+        round_dp = 2 if decimal else None
 
         if abs_time > MS_TO_YEAR:
             return f"{round(time/MS_TO_YEAR, round_dp)} Year{'' if (1.0 >= round(time/MS_TO_YEAR, round_dp) >= -1.0) else 's'}"
@@ -70,3 +70,4 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
     else:
         raise Exception("No Valid Time Unit Or Number Found")
 
+print(ms(12345, False))

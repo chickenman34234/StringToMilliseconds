@@ -1,10 +1,10 @@
 [project]
 name = "string_to_ms"
-version = "0.0.1"
+version = "0.0.3"
 authors = [
   { name="chickenman34234"},
 ]
-description = "A small example package"
+description = "A package that converts string times into milliseconds and milliseconds back to readable strings"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
