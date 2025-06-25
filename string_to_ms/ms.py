@@ -5,7 +5,7 @@ MS_TO_MINUTE = 1000 * 60
 MS_TO_HOUR = 1000 * 60 * 60
 MS_TO_DAY = 1000 * 60 * 60 * 24
 MS_TO_WEEK = 1000 * 60 * 60 * 24 * 7
-MS_TO_YEAR = 1000 * 60 * 60 * 24 * 7 * 52.1429
+MS_TO_YEAR = 1000 * 60 * 60 * 24 * 7 * 52.143
 
 
 def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
