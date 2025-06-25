@@ -25,7 +25,7 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
         num_value = re.search(
             r'^(-?(?:\d+)?\.?\d+) *(ms|msec|msecs|milli|millis|msecond|mseconds|min|mins|m|minute|minutes|h|hr|hrs|hour|hours|w|wk|wks|week|weeks|y|yr|yrs|year|years)',
             time)
-        print(num_value.group(1).find("."))
+
         if num_value is None:
             raise Exception("No Valid Time Unit Or Number Found")
 
@@ -34,7 +34,7 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
         else:
             time = float(num_value.group(1))
         time_unit = num_value.group(2)
-        print(time, time_unit)
+
 
         match time_unit:
             case "ms" | "msec" | "msecs" | "milli" | "millis" | "msecond" | "mseconds":
@@ -72,5 +72,5 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
         raise Exception("No Valid Time Unit Or Number Found")
 
 
-print(ms(1234, False))
+
 
