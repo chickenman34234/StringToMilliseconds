@@ -23,7 +23,7 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
             raise Exception("'time' must not be a non empty string")
 
         num_value = re.search(
-            r'^(-?(?:\d+)?\.?\d+) *(ms|msec|msecs|milli|millis|msecond|mseconds|min|mins|m|minute|minutes|h|hr|hrs|hour|hours|w|wk|wks|week|weeks|y|yr|yrs|year|years)',
+            r'^(-?(?:\d+)?\.?\d+) *(ms|msec|msecs|milli|millis|msecond|mseconds|min|mins|m|minute|minutes|h|hr|hrs|hour|hours|d|day|days|w|wk|wks|week|weeks|y|yr|yrs|year|years)',
             time)
 
         if num_value is None:
@@ -43,6 +43,8 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
                 return time * MS_TO_MINUTE
             case "h" | "hr" | "hrs" | "hour" | "hours":
                 return time * MS_TO_HOUR
+            case "d"|"day"|"days":
+                return time * MS_TO_DAY
             case "w" | "wk" | "wks" | "week" | "weeks":
                 return time * MS_TO_WEEK
             case "y" | "yr" | "yrs" | "year" | "years":
@@ -69,5 +71,3 @@ def ms(time: str | int | float, decimal:bool=True) -> str | int | float:
             return f"{round(time, round_dp)} Millisecond{'' if (1.0 >= round(time, round_dp) >= -1.0) else 's'}"
     else:
         raise Exception("No Valid Time Unit Or Number Found")
-
-print(ms(12345, False))

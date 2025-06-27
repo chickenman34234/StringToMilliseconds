@@ -22,6 +22,7 @@ A versatile function that handles bidirectional conversion between time strings 
 - Milliseconds: `ms`, `msec`, `msecs`, `milli`, `millis`, `msecond`, `mseconds`
 - Minutes: `min`, `mins`, `m`, `minute`, `minutes`
 - Hours: `h`, `hr`, `hrs`, `hour`, `hours`
+- Days: `d`, `day`, `days`
 - Weeks: `w`, `wk`, `wks`, `week`, `weeks`
 - Years: `y`, `yr`, `yrs`, `year`, `years`
 - Years will return as floats as they use the average weeks in a year (52.143 weeks).
